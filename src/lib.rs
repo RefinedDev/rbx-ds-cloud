@@ -9,6 +9,6 @@
 //! $ cargo add rbx_ds_cloud
 //! ```
 //!
-//! ## Tutorial
+//! ## Code examples
 //! Check out the [examples](https://github.com/RefinedDev/rbx-ds-cloud/tree/main/examples) directory in the repository of the project
 pub mod api;
