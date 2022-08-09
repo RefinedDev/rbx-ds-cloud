@@ -34,6 +34,6 @@
 
 - Or, you can use the `cargo add` command
 
-```sh
-cargo add rbx_ds_cloud
-```
+    ```sh
+    cargo add rbx_ds_cloud
+    ```
