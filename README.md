@@ -1,4 +1,4 @@
-# rbx-ds-cloud &emsp; ![logo](docs/imgs/icon.png)
+# rbx-ds-cloud &emsp; ![logo](docs/imgs/icon.ico)
 
 [![Crate](https://img.shields.io/crates/v/rbx-ds-cloud.svg)](https://crates.io/crates/rbx-ds-cloud)
 [![Docs](https://docs.rs/rbx-ds-cloud/badge.svg)](https://docs.rs/rbx-ds-cloud)
