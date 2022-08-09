@@ -2,13 +2,13 @@
 
 use chrono::DateTime;
 use rbx_ds_cloud::api::{error_types::Error, response_structs::*};
-use reqwest::{Response, StatusCode, header::HeaderMap};
+use reqwest::{header::HeaderMap, Response, StatusCode};
 
-async fn next_page_cursor_check(cursor: Option<String>, func: String) {
+async fn next_page_cursor_check(cursor: Option<String>) {
     // Double checking if there's a NextPageCursor in the response, since the value is un-defined as mentioned by the documentation, it cannot be None
     if let Some(n) = cursor {
         if !n.is_empty() {
-            let msg = format!("All of the {} were not able to be printed.\nNext time use this NextPageCursor value below in the commandline with the '--cursor' or '-c' flag to get the rest of the Datastores\n<<  {}  >>",func, n);
+            let msg = format!("{}\nMore data can be shown, next time provide a Cursor value with the `--cursor` or `-c` flag\nCURSOR:  {}  ","-".repeat(60), n);
             println!("\n{}", msg);
         }
     }
@@ -22,28 +22,30 @@ pub async fn list_data_stores_respond(json_data: ListDataStoresResponse) {
             .date_naive(); // Convert the weird Date returned from Roblox to an actual read-able Date
 
         println!(
-            "--------------------------\n{}. Name( '{}' ) - DateCreated( {} )",
+            "{}\n{}. Name( '{}' ) - DateCreated( {} )",
+            "-".repeat(30),
             i + 1,
             v.name,
             formatted_time
         );
     }
 
-    next_page_cursor_check(json_data.nextPageCursor, "Datastores".to_string()).await;
+    next_page_cursor_check(json_data.nextPageCursor).await;
 }
 
 pub async fn list_entries_response(json_data: ListEntriesResponse) {
     // "Pretty printing" the result
     for (i, v) in json_data.keys.iter().enumerate() {
         println!(
-            "--------------------------\n{}. Key( {} ) - Scope( {} )",
+            "{}\n{}. Key( {} ) - Scope( {} )",
+            "-".repeat(25),
             i + 1,
             v.key,
             v.scope
         );
     }
 
-    next_page_cursor_check(json_data.nextPageCursor, "Keys".to_string()).await;
+    next_page_cursor_check(json_data.nextPageCursor).await;
 }
 
 pub async fn get_entry_response(res: Response) -> Result<(), Error> {
@@ -61,12 +63,15 @@ pub async fn delete_entry_response(status_code: StatusCode) {
 }
 
 pub async fn increment_entry_response(status_code: StatusCode) {
-    println!("\nData has been incremented successfully! (Code: {})", status_code);
+    println!(
+        "\nData has been incremented successfully! (Code: {})",
+        status_code
+    );
 }
 
 pub async fn list_entries_version_response(json_data: ListEntryVersionResponse) {
     println!("{:#?}", json_data.versions);
-    next_page_cursor_check(json_data.nextPageCursor, "ListEntryVersions".to_string()).await;
+    next_page_cursor_check(json_data.nextPageCursor).await;
 }
 
 pub async fn get_entry_version_response(header_map: &HeaderMap) {

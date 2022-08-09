@@ -1,4 +1,5 @@
-//! Some of the responses from the Roblox API are deserialized into these structs
+//! Some of the responses from the Roblox API are deserialized into these structs,
+//! I suppose this section would not any documentation because, honestly, I do not know what to write
 
 use serde::{Deserialize, Serialize};
 
@@ -13,7 +14,7 @@ pub struct ListDataStoreIndex {
 #[allow(non_snake_case)]
 pub struct ListDataStoresResponse {
     pub datastores: Vec<ListDataStoreIndex>,
-    pub nextPageCursor: Option<String>
+    pub nextPageCursor: Option<String>,
 }
 
 #[derive(Deserialize, Debug)]
@@ -27,7 +28,7 @@ pub struct ListEntriesIndex {
 #[allow(non_snake_case)]
 pub struct ListEntriesResponse {
     pub keys: Vec<ListEntriesIndex>,
-    pub nextPageCursor: Option<String>
+    pub nextPageCursor: Option<String>,
 }
 
 #[derive(Deserialize, Debug, Serialize)]
@@ -37,12 +38,12 @@ pub struct EntryVersion {
     pub deleted: bool,
     pub contentLength: u64,
     pub createdTime: String,
-    pub objectCreatedTime: String
+    pub objectCreatedTime: String,
 }
 
 #[derive(Deserialize, Debug)]
 #[allow(non_snake_case)]
 pub struct ListEntryVersionResponse {
     pub versions: Vec<EntryVersion>,
-    pub nextPageCursor: Option<String>
+    pub nextPageCursor: Option<String>,
 }
