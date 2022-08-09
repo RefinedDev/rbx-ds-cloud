@@ -3,6 +3,7 @@ use serde::Deserialize;
 
 #[derive(Deserialize, Debug)]
 #[allow(non_snake_case)]
+/// Response returned when there's an error with the Datastore
 pub struct DataStoreErrorResponse {
     pub error: String,
     pub message: String,
@@ -11,12 +12,14 @@ pub struct DataStoreErrorResponse {
 
 #[derive(Deserialize, Debug)]
 #[allow(non_snake_case)]
+/// More details of a DataStoreErrorResponse
 pub struct DataStoreErrorDetail {
     pub errorDetailType: String,
     pub datastoreErrorCode: DataStoreErrorCode,
 }
 
 #[derive(Deserialize, Debug)]
+/// All possible error codes regarding the Datastore API
 pub enum DataStoreErrorCode {
     ContentLengthRequired,
     InvalidUniverseId,
@@ -47,6 +50,7 @@ pub enum DataStoreErrorCode {
 }
 
 #[derive(Debug)]
+/// The enum being utilized when a Datastore, Reqwest or Serde error occurs
 pub enum Error {
     /// Error with the Reqwest module
     ReqwestModuleError(reqwest::Error),
@@ -56,9 +60,6 @@ pub enum Error {
 
     /// Roblox Datastore API error
     DataStoreAPIError(DataStoreErrorResponse),
-
-    /// Parsing failure
-    ParsingFloatError(std::num::ParseFloatError),
 }
 
 impl std::error::Error for Error {}
@@ -75,19 +76,12 @@ impl From<serde_json::Error> for Error {
     }
 }
 
-impl From<std::num::ParseFloatError> for Error {
-    fn from(e: std::num::ParseFloatError) -> Self {
-        Self::ParsingFloatError(e)
-    }
-}
-
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> Result<(), std::fmt::Error> {
         match self {
             Self::ReqwestModuleError(e) => write!(f, "{:?}", e),
             Self::SerdeModuleJsonError(e) => write!(f, "{:?}", e),
             Self::DataStoreAPIError(e) => write!(f, "{:?}", e),
-            Self::ParsingFloatError(e) => write!(f, "{:?}", e),
         }
     }
 }

@@ -1,4 +1,4 @@
-# rbx-ds-cloud &emsp; ![logo](docs/imgs/favicon.ico)
+# rbx-ds-cloud &emsp; ![logo](favicon.ico)
 
 [![Crate](https://img.shields.io/crates/v/rbx-ds-cloud.svg)](https://crates.io/crates/rbx-ds-cloud)
 [![Docs](https://docs.rs/rbx-ds-cloud/badge.svg)](https://docs.rs/rbx-ds-cloud)
@@ -7,30 +7,13 @@
 
 `rbx-ds-cloud` is a CLI and Library for interacting with [Roblox's Datastore Open Cloud API](https://create.roblox.com/docs/open-cloud/data-store-api)
 
+## Use case
+
+- This tool is good for Debugging your game's datastores without being on Roblox Studio
+- Good for instantaneous changes to the game's datastores
+- Continuous Delivery
+
 ## Install
-
-## Installing the Binary
-
-- You MUST have [Rust](https://www.rust-lang.org/tools/install) installed
-
-1. You can run the following command to install the binary.
-
-    ```sh
-    cargo install rbx_ds_cloud
-    ```
-
-    It will be installed on the `$HOME/.cargo/bin` path by default, you may change it in your system's enviorment variables.
-
-2. You can download the repository and build from the source
-
-    ```sh
-    git clone https://github.com/RefinedDev/rbx-ds-cloud.git
-    cd rbx-ds-cloud
-
-    cargo build --release
-    ```
-
-3. Or, download and unzip the tool for your OS from the [releases](https://github.com/RefinedDev/rbx-ds-cloud/releases) page
 
 ## Installing the Library
 
@@ -43,14 +26,31 @@
 
 - Or, you can use the `cargo add` command
 
-```sh
-cargo add rbx_ds_cloud
-```
+    ```sh
+    cargo add rbx_ds_cloud
+    ```
 
-## Use case
+## Installing the Binary
 
-This tool is good for Debugging your game's datastores without being on Roblox Studio
+- You can run the following command to install the binary.
 
-## Documentation
+    ```sh
+    cargo install rbx_ds_cloud
+    ```
+
+    It will be installed on the `$HOME/.cargo/bin` path by default, you may change it in your system's enviorment variables.
+
+- You can download the repository and build from the source
+
+    ```sh
+    git clone https://github.com/RefinedDev/rbx-ds-cloud.git
+    cd rbx-ds-cloud
+
+    cargo build --release
+    ```
+
+- Or, download and unzip the tool for your OS from the repository's [releases](https://github.com/RefinedDev/rbx-ds-cloud/releases) page, you then have to add the binary's path to your system's environment variables
+
+## CLI Documentation
 
 <https://refineddev.github.io/rbx-ds-cloud/>
