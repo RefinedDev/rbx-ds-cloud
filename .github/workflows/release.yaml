@@ -70,7 +70,7 @@ jobs:
           profile: minimal
 
       - name: Build Release
-        run: cargo build --release --locked --verbose
+        run: cargo build --release --offline --verbose
         env:
           CARGO_TARGET_DIR: output
           OPENSSL_STATIC: 1
