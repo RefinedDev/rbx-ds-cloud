@@ -1,4 +1,5 @@
-//! Some of the responses from the Roblox API are deserialized into these structs
+//! Some of the responses from the Roblox API are deserialized into these structs,
+//! I suppose this section would not any documentation because, honestly, I do not know what to write
 
 use serde::{Deserialize, Serialize};
 
