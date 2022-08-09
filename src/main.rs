@@ -8,7 +8,7 @@ use rbx_ds_cloud::api::response_structs::*;
 use clap::{Parser, Subcommand};
 
 #[derive(Parser)]
-#[clap(author = "RefinedDev", version = "0.1.1", about = "CLI and Library for Roblox's Datastore Open Cloud API", long_about = None)]
+#[clap(author = "RefinedDev", version = "0.1.2", about = "CLI and Library for Roblox's Datastore Open Cloud API", long_about = None)]
 #[clap(propagate_version = true)]
 pub struct CLI {
     #[clap(subcommand)]
@@ -37,18 +37,18 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             let res = datastore_api::list_data_stores(list_data_stores).await?;
             let convert_to_json = res.json::<ListDataStoresResponse>().await?;
 
-            cli_response::list_data_stores_respond(convert_to_json).await; 
+            cli_response::list_data_stores_respond(convert_to_json).await;
         }
 
         Commands::ListEntries(list_entries) => {
             let res = datastore_api::list_entries(list_entries).await?;
             let convert_to_json = res.json::<ListEntriesResponse>().await?;
 
-            cli_response::list_entries_response(convert_to_json).await; 
+            cli_response::list_entries_response(convert_to_json).await;
         }
 
         Commands::GetEntry(get_entry) => {
-            let res = datastore_api::get_entry(get_entry).await?; 
+            let res = datastore_api::get_entry(get_entry).await?;
 
             cli_response::get_entry_response(res).await?;
         }
@@ -73,7 +73,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
 
         Commands::IncrementEntry(increment_entry) => {
-            let res  = datastore_api::increment_entry(increment_entry).await?;
+            let res = datastore_api::increment_entry(increment_entry).await?;
             cli_response::increment_entry_response(res.status()).await;
         }
 

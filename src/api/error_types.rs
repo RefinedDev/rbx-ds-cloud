@@ -50,7 +50,7 @@ pub enum DataStoreErrorCode {
 pub enum Error {
     /// Error with the Reqwest module
     ReqwestModuleError(reqwest::Error),
-    
+
     /// JSON Serialization Error
     SerdeModuleJsonError(serde_json::Error),
 

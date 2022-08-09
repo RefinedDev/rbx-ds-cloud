@@ -2,7 +2,7 @@
 
 use chrono::DateTime;
 use rbx_ds_cloud::api::{error_types::Error, response_structs::*};
-use reqwest::{Response, StatusCode, header::HeaderMap};
+use reqwest::{header::HeaderMap, Response, StatusCode};
 
 async fn next_page_cursor_check(cursor: Option<String>, func: String) {
     // Double checking if there's a NextPageCursor in the response, since the value is un-defined as mentioned by the documentation, it cannot be None
@@ -61,7 +61,10 @@ pub async fn delete_entry_response(status_code: StatusCode) {
 }
 
 pub async fn increment_entry_response(status_code: StatusCode) {
-    println!("\nData has been incremented successfully! (Code: {})", status_code);
+    println!(
+        "\nData has been incremented successfully! (Code: {})",
+        status_code
+    );
 }
 
 pub async fn list_entries_version_response(json_data: ListEntryVersionResponse) {

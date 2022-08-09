@@ -4,7 +4,7 @@ use rbx_ds_cloud::api::endpoint_structs::GetEntry;
 use reqwest::Response;
 
 #[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error> > {
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let api_key = "API_KEY".to_string();
     let universe_id: u64 = 0;
 
@@ -17,13 +17,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error> > {
         universe_id,
         datastore_name,
         key,
-        scope
+        scope,
     };
 
     let res: Response = get_entry(&entry_struct).await?;
 
     let body = res.text().await?;
     println!("{}", body);
-    
+
     Ok(())
 }
