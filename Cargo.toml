@@ -1,10 +1,11 @@
 [package]
 name = "rbx-ds-cloud"
-version = "0.1.0"
+version = "0.1.1"
 description = "CLI and Library for Roblox's Datastore Open Cloud API"
 authors = ["RefinedDev"]
 license = "MIT"
 repository = "https://github.com/RefinedDev/rbx-ds-cloud"
+documentation = "https://refineddev.github.io/rbx-ds-cloud/"
 readme = "README.md"
 edition = "2021"
 

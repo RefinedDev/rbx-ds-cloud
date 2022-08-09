@@ -12,7 +12,7 @@
 
     It will be installed on the `$HOME/.cargo/bin` path by default, you may change it in your system's enviorment variables.
 
-2. Or, you can download the repository and build from the source
+2. You can download the repository and build from the source
 
     ```sh
     git clone https://github.com/RefinedDev/rbx-ds-cloud.git
@@ -20,6 +20,8 @@
 
     cargo build --release
     ```
+
+3. Or, download and unzip the tool for your OS from the [releases](https://github.com/RefinedDev/rbx-ds-cloud/releases) page
 
 ## Installing the Library
 
