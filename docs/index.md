@@ -4,6 +4,6 @@
 
 ## Navigation
 
+- View the `Install` section to see how to install the binary or library
 - View the `CLI` section to see how to use it
-- View the `Install` section to see how to install the binary OR library
 - The `API` section should help you redirect to the library's documentation
