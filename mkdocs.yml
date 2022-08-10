@@ -6,8 +6,8 @@ repo_url: https://github.com/RefinedDev/rbx-ds-cloud
 
 nav:
   - Home: index.md
-  - CLI: cli.md
   - Install: install.md
+  - CLI: cli.md
   - Library Documentation: api.md
 
 theme:

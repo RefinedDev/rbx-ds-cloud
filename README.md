@@ -1,4 +1,4 @@
-# rbx-ds-cloud &emsp; ![logo](favicon.ico)
+# rbx-ds-cloud &emsp; ![icon](https://user-images.githubusercontent.com/74603055/183870065-2fe503dd-07b6-4d4a-9fa5-bc02fe580cbc.jpg)
 
 [![Crate](https://img.shields.io/crates/v/rbx-ds-cloud.svg)](https://crates.io/crates/rbx-ds-cloud)
 [![Docs](https://docs.rs/rbx-ds-cloud/badge.svg)](https://docs.rs/rbx-ds-cloud)
@@ -21,7 +21,7 @@
 
     ```toml
     [dependencies]
-    rbx_ds_cloud = "0.1.0"
+    rbx_ds_cloud = "0.1.3"
     ```
 
 - Or, you can use the `cargo add` command

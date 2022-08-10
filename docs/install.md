@@ -29,7 +29,7 @@
 
     ```toml
     [dependencies]
-    rbx_ds_cloud = "0.1.0"
+    rbx_ds_cloud = "0.1.3"
     ```
 
 - Or, you can use the `cargo add` command
