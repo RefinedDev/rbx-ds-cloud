@@ -8,7 +8,7 @@ use rbx_ds_cloud::api::response_structs::*;
 use clap::{Parser, Subcommand};
 
 #[derive(Parser)]
-#[clap(author = "RefinedDev", version = "0.1.2", about = "CLI and Library for Roblox's Datastore Open Cloud API", long_about = None)]
+#[clap(author = "RefinedDev", version = "0.1.3", about = "CLI and Library for Roblox's Datastore Open Cloud API", long_about = None)]
 #[clap(propagate_version = true)]
 pub struct CLI {
     #[clap(subcommand)]
