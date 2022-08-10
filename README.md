@@ -17,17 +17,17 @@
 
 ## Installing the Library
 
-- If you would like to use `rbx-ds-cloud` in a Rust project, just add `rbx_ds_cloud` to the `Cargo.toml` dependancy list of that project
+- If you would like to use `rbx-ds-cloud` in a Rust project, just add `rbx-ds-cloud` to the `Cargo.toml` dependancy list of that project
 
     ```toml
     [dependencies]
-    rbx_ds_cloud = "0.1.3"
+    rbx-ds-cloud = "0.1.3"
     ```
 
 - Or, you can use the `cargo add` command
 
     ```sh
-    cargo add rbx_ds_cloud
+    cargo add rbx-ds-cloud
     ```
 
 ## Installing the Binary
@@ -35,7 +35,7 @@
 - You can run the following command to install the binary.
 
     ```sh
-    cargo install rbx_ds_cloud
+    cargo install rbx-ds-cloud
     ```
 
     It will be installed on the `$HOME/.cargo/bin` path by default, you may change it in your system's enviorment variables.
